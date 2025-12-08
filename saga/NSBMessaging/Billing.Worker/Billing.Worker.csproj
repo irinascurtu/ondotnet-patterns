@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <!--
+  Wildcards are used in PackageReferences below to ensure projects created from the template reference the latest versions of packages.
+  Consider changing the wildcard versions to explicit versions to have more control over which versions are being used.
+  -->
+  <ItemGroup>
+    <PackageReference Include="NServiceBus" Version="9.*" />
+    <PackageReference Include="NServiceBus.Extensions.Hosting" Version="3.*" />
+    <PackageReference Include="NServiceBus.RabbitMQ" Version="10.*" />
+    <PackageReference Include="NServiceBus.Persistence.Sql" Version="8.*" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="appsettings*.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Remove="appsettings*.json" />
+    <ProjectCapability Include="DynamicFileNestingEnabled" />
+  </ItemGroup>
+
+</Project>
